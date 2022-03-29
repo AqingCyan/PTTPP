@@ -22,24 +22,24 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      
+
       - name: install nodejs
         uses: actions/setup-node@v3.0.0
         with:
           node-version: "14.X"
-          
+
       - name: install deps 🛹
-        run: yarn run install
-        
+        run: yarn
+
       - name: build app 📦
         run: yarn run build
-        
+
       - name: deploy dist 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
-          token: ${{ github.token }}
+          token: ${{ secrets.ACCESS_TOKEN }}
           folder: dist
           branch: gh-pages
           clean: true
-        
-      
+
+
