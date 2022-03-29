@@ -7,6 +7,7 @@ export default defineConfig({
   antd: {
     dark: true,
   },
+  publicPath: './',
   routes: [{ path: '/', component: '@/pages/index' }],
   fastRefresh: {},
 });
